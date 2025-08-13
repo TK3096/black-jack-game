@@ -1,4 +1,4 @@
-use black_jack_game_server::infrastructure::axum_http::http_serve::start;
+use blackjack_game_server::infrastructure::axum_http::http_serve::start;
 
 #[tokio::main]
 async fn main() {

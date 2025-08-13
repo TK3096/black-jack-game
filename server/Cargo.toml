@@ -1,5 +1,5 @@
 [package]
-name = "black-jack-game-server"
+name = "blackjack-game-server"
 version = "0.1.0"
 edition = "2024"
 
