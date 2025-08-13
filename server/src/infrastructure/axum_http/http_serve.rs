@@ -17,7 +17,7 @@ pub async fn start() -> Result<()> {
 
     info!("Server is running on port {}", 3001);
 
-    axum::serve(listener, app)
+    axum::serve(listener, app.into_make_service())
         .with_graceful_shutdown(shutdown_signal())
         .await?;
 
