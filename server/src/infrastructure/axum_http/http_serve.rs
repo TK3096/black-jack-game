@@ -5,11 +5,12 @@ use axum::{Router, routing::get};
 use tokio::net::TcpListener;
 use tracing::info;
 
-use crate::infrastructure::axum_http::default_router;
+use crate::infrastructure::axum_http::{default_router, routers};
 
 pub async fn start() -> Result<()> {
     let app = Router::new()
         .fallback(default_router::not_found)
+        .nest("/rooms", routers::rooms::routes())
         .route("/helth-check", get(default_router::healt_check));
 
     let addr = SocketAddr::from(([127, 0, 0, 1], 3001));
